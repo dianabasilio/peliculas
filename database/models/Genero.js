@@ -22,6 +22,16 @@ module.exports = function(sequelize, dataTypes){
 
     }
     let Genero = sequelize.define(alias, cols, config);
+    //Ahora hay que definir las associaciones/relaciones
+//Un genero tiene muchas peliculas
+//hasMany uno a muchos
+    Genero.associate= function(models){
+        Genero.hasMany(models.Pelicula,{
+            as: "peliculas",
+            foreignKey: "genre_id"
+        });
+
+    }
     
     return Genero;
 }

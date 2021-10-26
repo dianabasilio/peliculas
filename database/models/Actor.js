@@ -25,5 +25,22 @@ module.exports = function(sequelize, dataTypes){
 
     }
     let Actor = sequelize.define(alias, cols, config);
+
+    //Ahora hay que definir las associaciones/relaciones
+//Un actor tiene muchas pelis
+//Una peli tiene muchos actores
+//belongs to many es para muchos a muchos
+Actor.associate= function(models){
+    Actor.belongsToMany(models.Pelicula,{
+        as: "peliculas",
+        //throught es para decir que tabla relaciona estas 2
+        //solo de muchos a muchos
+        through: "actor_movie",
+        foreignKey: "actor_id",
+        otherKey: "movie_id",
+        timestamps: false
+    });
+
+}
     return Actor;
 }
