@@ -3,9 +3,9 @@ let db = require("../database/models");
 let peliculasController = {
     crear: function(req, res) {
         db.Genero.findAll()
-        .then(function(generos){
-            return res.render("listadoPeliculas",{generos:generos});
-        })
+            .then(function(generos){
+                return res.render("listadoPeliculas",{generos:generos});
+            })
     }
 }
 
