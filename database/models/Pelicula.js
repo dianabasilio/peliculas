@@ -50,7 +50,7 @@ Pelicula.associate= function(models){
     //Un actor tiene muchas pelis
     //Una peli tiene muchos actores
     //belongs many muchos a mucos
-    Pelicula.belongsToMany(models.Pelicula,{
+    Pelicula.belongsToMany(models.Actor,{
         as: "actores",
         //throught es para decir que tabla relaciona estas 2
         //solo de muchos a muchos
