@@ -17,4 +17,9 @@ router.get("/", peliculasController.listado);
 
 //DETALLE
 router.get("/:id", peliculasController.detalle);
+
+//ACTUALIZACION UPDATE
+router.get("/editar/:id",peliculasController.editar);
+router.post("/editar/:id",peliculasController.actualizar);
+
 module.exports = router;

@@ -5,7 +5,7 @@
         Duracion: <%= pelicula.length%>
     </li>
     <li>
-        Fecha de estreno: <%= pelicula.releasedate%>
+        Fecha de estreno: <%= pelicula.release_date%>
     </li>
     <li>
         Premios: <%= pelicula.awards%>
@@ -27,6 +27,10 @@
             <% } %>
         </ul>
 </ul>
+
+<a href = "/peliculas/editar/<%=pelicula.id%>">
+    <button>Editar</button>
+</a>
 
 <%- include('footer') -%>
 
